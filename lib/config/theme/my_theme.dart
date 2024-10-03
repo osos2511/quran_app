@@ -19,12 +19,27 @@ class MyTheme {
       ),
       color: Colors.white,
     ),
+    bottomSheetTheme: BottomSheetThemeData(
+      backgroundColor: Colors.white,
+      elevation: 18,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(18),
+      ),
+    ),
     textTheme: const TextTheme(
       titleSmall: TextStyle(
         fontWeight: FontWeight.w400,
         fontSize: 25,
         color: Colors.black,
       ),
+      displaySmall: TextStyle(
+          fontSize: 14, fontWeight: FontWeight.w400, color: Colors.black),
+      labelSmall: TextStyle(
+          fontWeight: FontWeight.w700, fontSize: 16, color: Colors.black),
+      bodyMedium: TextStyle(
+          fontSize: 18,
+          fontWeight: FontWeight.w700,
+          color: ColorsManager.goldColor),
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       selectedItemColor: Colors.black,

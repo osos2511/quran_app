@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       child: Scaffold(
         appBar: AppBar(
-          title: Text(StringsManager.appTitle),
+          title: const Text(StringsManager.appTitle),
         ),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: selectedIndex,
@@ -49,32 +49,32 @@ class _HomeScreenState extends State<HomeScreen> {
           items: [
             BottomNavigationBarItem(
                 backgroundColor: Theme.of(context).primaryColor,
-                icon: ImageIcon(
+                icon: const ImageIcon(
                   AssetImage(AssetsManager.quranIcon),
                 ),
-                label: 'Quran'),
+                label: StringsManager.quranLabel),
             BottomNavigationBarItem(
                 backgroundColor: Theme.of(context).primaryColor,
-                icon: ImageIcon(
+                icon: const ImageIcon(
                   AssetImage(AssetsManager.hadithIcon),
                 ),
-                label: 'Hadith'),
+                label: StringsManager.hadithLabel),
             BottomNavigationBarItem(
                 backgroundColor: Theme.of(context).primaryColor,
-                icon: ImageIcon(
+                icon: const ImageIcon(
                   AssetImage(AssetsManager.sibhaIcon),
                 ),
-                label: 'Sibha'),
+                label: StringsManager.sibhaLabel),
             BottomNavigationBarItem(
                 backgroundColor: Theme.of(context).primaryColor,
-                icon: ImageIcon(
+                icon: const ImageIcon(
                   AssetImage(AssetsManager.radioIcon),
                 ),
-                label: 'radio'),
+                label: StringsManager.radioLable),
             BottomNavigationBarItem(
                 backgroundColor: Theme.of(context).primaryColor,
-                icon: Icon(Icons.settings),
-                label: 'Settings'),
+                icon: const Icon(Icons.settings),
+                label: StringsManager.radioLable),
           ],
         ),
         body: tabs[selectedIndex],

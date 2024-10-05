@@ -16,7 +16,7 @@ class VerseWidget extends StatelessWidget {
           child: Text(
             verseItem,
             textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.titleSmall,
+            style: Theme.of(context).textTheme.bodyLarge,
           ),
         ),
       ),

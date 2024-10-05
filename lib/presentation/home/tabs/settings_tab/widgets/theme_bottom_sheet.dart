@@ -18,8 +18,7 @@ class ThemeBottomSheet extends StatelessWidget {
                 'Light',
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
-              Icon(Icons.check,
-                  size: 30, color: Theme.of(context).primaryColor),
+              Icon(Icons.check),
             ],
           ),
           SizedBox(

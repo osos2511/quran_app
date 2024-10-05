@@ -24,7 +24,7 @@ class SettingsTab extends StatelessWidget {
               showThemeBottomSheet(context);
             },
             child: Container(
-              padding: EdgeInsets.symmetric(vertical: 8, horizontal: 4),
+              padding: EdgeInsets.symmetric(vertical: 15, horizontal: 4),
               decoration: BoxDecoration(
                 border:
                     Border.all(color: Theme.of(context).primaryColor, width: 2),
@@ -49,7 +49,7 @@ class SettingsTab extends StatelessWidget {
               showLanguageBottomSheet(context);
             },
             child: Container(
-              padding: EdgeInsets.symmetric(vertical: 8, horizontal: 4),
+              padding: EdgeInsets.symmetric(vertical: 15, horizontal: 4),
               decoration: BoxDecoration(
                 border:
                     Border.all(color: Theme.of(context).primaryColor, width: 2),

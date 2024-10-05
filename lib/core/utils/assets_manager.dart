@@ -2,6 +2,7 @@ class AssetsManager {
   static const String lightSplashScreen = 'assets/images/splash_screen.jpg';
   static const String lightMainBg =
       'assets/images/light_main_background_image.jpg';
+  static const String darkMainBg = 'assets/images/bg.jpg';
   static const String quranIcon = 'assets/images/icon_quran.png';
   static const String hadithIcon = 'assets/images/icon_hadeth.png';
   static const String sibhaIcon = 'assets/images/icon_sebha.png';

@@ -28,9 +28,7 @@ class LanguageBottomSheet extends StatelessWidget {
           Text(
             AppLocalizations.of(context)!.arabic,
             style: Theme.of(context)
-                .textTheme
-                .bodyMedium
-                ?.copyWith(color: Colors.black),
+                .textTheme.displayMedium,
           ),
         ],
       ),

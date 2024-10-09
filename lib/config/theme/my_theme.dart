@@ -4,7 +4,12 @@ import 'package:islami_app/core/utils/colors_manager.dart';
 class MyTheme {
   static bool isDarkEnabled = true;
   static final ThemeData lightTheme = ThemeData(
-    colorScheme: ColorScheme.fromSeed(seedColor: ColorsManager.goldColor),
+    iconTheme: IconThemeData(color: ColorsManager.goldColor, size: 30),
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: ColorsManager.goldColor,
+      primary: ColorsManager.goldColor,
+      onSecondary: ColorsManager.goldColor,
+    ),
     appBarTheme: const AppBarTheme(
       iconTheme: IconThemeData(
         color: Colors.black,
@@ -50,6 +55,8 @@ class MyTheme {
           fontSize: 18,
           fontWeight: FontWeight.w700,
           color: ColorsManager.goldColor),
+      displayMedium: TextStyle(
+          fontSize: 18, fontWeight: FontWeight.w700, color: Colors.black),
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       selectedItemColor: Colors.black,
@@ -64,6 +71,12 @@ class MyTheme {
   );
 
   static final ThemeData darkTheme = ThemeData(
+    iconTheme: IconThemeData(color: ColorsManager.yellowColor, size: 30),
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: ColorsManager.yellowColor,
+      primary: ColorsManager.yellowColor,
+      onSecondary: Colors.white,
+    ),
     appBarTheme: const AppBarTheme(
       iconTheme: IconThemeData(
         color: Colors.white,
@@ -91,13 +104,20 @@ class MyTheme {
       ),
     ),
     textTheme: const TextTheme(
+      bodyLarge: TextStyle(
+        color: ColorsManager.yellowColor,
+        fontWeight: FontWeight.w600,
+        fontSize: 25,
+      ),
       titleSmall: TextStyle(
         fontWeight: FontWeight.w400,
         fontSize: 25,
         color: Colors.white,
       ),
       displaySmall: TextStyle(
-          fontSize: 14, fontWeight: FontWeight.w400, color: Colors.black),
+          fontSize: 14,
+          fontWeight: FontWeight.w400,
+          color: ColorsManager.yellowColor),
       labelSmall: TextStyle(
           fontWeight: FontWeight.w700,
           fontSize: 16,
@@ -106,6 +126,8 @@ class MyTheme {
           fontSize: 18,
           fontWeight: FontWeight.w700,
           color: ColorsManager.yellowColor),
+      displayMedium: TextStyle(
+          fontSize: 18, fontWeight: FontWeight.w700, color: Colors.white),
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       selectedItemColor: ColorsManager.yellowColor,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ThemeBottomSheet extends StatelessWidget {
   const ThemeBottomSheet({super.key});
@@ -15,7 +16,7 @@ class ThemeBottomSheet extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Light',
+                AppLocalizations.of(context)!.light,
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
               Icon(Icons.check),
@@ -25,7 +26,7 @@ class ThemeBottomSheet extends StatelessWidget {
             height: 18,
           ),
           Text(
-            'Dark',
+            AppLocalizations.of(context)!.dark,
             style: Theme.of(context)
                 .textTheme
                 .bodyMedium

@@ -13,6 +13,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      localizationsDelegates: [
+        AppLocalizations.delegate, // Add this line
+
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        Locale('en'), // English
+        Locale('ar'), // Arabic
+      ],
+      locale: Locale('en'),
       routes: {
         RoutesManager.homeRoute: (_) => HomeScreen(),
         RoutesManager.splashRoute: (_) => const SplashScreen(),
@@ -21,7 +33,6 @@ class MyApp extends StatelessWidget {
       },
       initialRoute: RoutesManager.splashRoute,
       theme: MyTheme.lightTheme,
-      darkTheme: MyTheme.darkTheme,
       themeMode: ThemeMode.dark,
     );
   }

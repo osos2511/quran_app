@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/presentation/home/tabs/settings_tab/widgets/language_bottom_sheet.dart';
 import 'package:islami_app/presentation/home/tabs/settings_tab/widgets/theme_bottom_sheet.dart';
 
@@ -13,10 +14,10 @@ class SettingsTab extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
-            'Theme',
+            AppLocalizations.of(context)!.theme,
             style: Theme.of(context).textTheme.labelSmall,
           ),
-          SizedBox(
+          const SizedBox(
             height: 4,
           ),
           InkWell(
@@ -24,13 +25,13 @@ class SettingsTab extends StatelessWidget {
               showThemeBottomSheet(context);
             },
             child: Container(
-              padding: EdgeInsets.symmetric(vertical: 15, horizontal: 4),
+              padding: EdgeInsets.symmetric(vertical: 8, horizontal: 4),
               decoration: BoxDecoration(
                 border:
                     Border.all(color: Theme.of(context).primaryColor, width: 2),
                 borderRadius: BorderRadius.circular(12),
               ),
-              child: Text('Light',
+    child: Text(AppLocalizations.of(context)!.light,
                   style: Theme.of(context).textTheme.displaySmall),
             ),
           ),
@@ -38,7 +39,7 @@ class SettingsTab extends StatelessWidget {
             height: 12,
           ),
           Text(
-            'Language',
+            AppLocalizations.of(context)!.language,
             style: Theme.of(context).textTheme.labelSmall,
           ),
           SizedBox(
@@ -49,13 +50,13 @@ class SettingsTab extends StatelessWidget {
               showLanguageBottomSheet(context);
             },
             child: Container(
-              padding: EdgeInsets.symmetric(vertical: 15, horizontal: 4),
+              padding: EdgeInsets.symmetric(vertical: 8, horizontal: 4),
               decoration: BoxDecoration(
                 border:
                     Border.all(color: Theme.of(context).primaryColor, width: 2),
                 borderRadius: BorderRadius.circular(12),
               ),
-              child: Text('English',
+    child: Text(AppLocalizations.of(context)!.english,
                   style: Theme.of(context).textTheme.displaySmall),
             ),
           ),

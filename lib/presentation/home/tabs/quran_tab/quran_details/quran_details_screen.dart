@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:islami_app/presentation/home/tabs/quran_tab/quran_details/quran_widget.dart';
 import 'package:islami_app/presentation/home/tabs/quran_tab/quran_title_widget/quran_title_widget.dart';
 
+import '../../../../../config/theme/my_theme.dart';
 import '../../../../../core/utils/assets_manager.dart';
 
 class QuranDetailsScreen extends StatefulWidget {
@@ -20,9 +21,11 @@ class _QuranDetailsScreenState extends State<QuranDetailsScreen> {
     SuraArgs args = ModalRoute.of(context)?.settings.arguments as SuraArgs;
     if (verses.isEmpty) readFile(args.index);
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(AssetsManager.lightMainBg),
+          image: AssetImage(MyTheme.isDarkEnabled
+              ? AssetsManager.darkMainBg
+              : AssetsManager.lightMainBg),
           fit: BoxFit.fill,
         ),
       ),

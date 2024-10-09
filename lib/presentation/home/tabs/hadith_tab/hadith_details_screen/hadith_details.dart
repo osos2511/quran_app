@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/presentation/home/tabs/hadith_tab/hadith_tab.dart';
 
+import '../../../../../config/theme/my_theme.dart';
 import '../../../../../core/utils/assets_manager.dart';
 
 class HadithDetailsScreen extends StatelessWidget {
@@ -11,9 +12,11 @@ class HadithDetailsScreen extends StatelessWidget {
     HadithItem hadith =
         ModalRoute.of(context)?.settings.arguments as HadithItem;
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(AssetsManager.lightMainBg),
+          image: AssetImage(MyTheme.isDarkEnabled
+              ? AssetsManager.darkMainBg
+              : AssetsManager.lightMainBg),
           fit: BoxFit.fill,
         ),
       ),
@@ -31,7 +34,7 @@ class HadithDetailsScreen extends StatelessWidget {
                     hadith.content,
                     textDirection: TextDirection.rtl,
                     textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.titleSmall,
+                    style: Theme.of(context).textTheme.bodyLarge,
                   ),
                 )),
           ),

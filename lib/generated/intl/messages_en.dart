@@ -22,18 +22,5 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
 
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "app_title": MessageLookupByLibrary.simpleMessage("islami"),
-        "chapter_name": MessageLookupByLibrary.simpleMessage("Chapter Name"),
-        "dark": MessageLookupByLibrary.simpleMessage("Dark"),
-        "hadith_tab": MessageLookupByLibrary.simpleMessage("Hadith"),
-        "language": MessageLookupByLibrary.simpleMessage("Language"),
-        "light": MessageLookupByLibrary.simpleMessage("Light"),
-        "quran_tab": MessageLookupByLibrary.simpleMessage("Quran"),
-        "radio_tab": MessageLookupByLibrary.simpleMessage("Radio"),
-        "setting_tab": MessageLookupByLibrary.simpleMessage("Settings"),
-        "tasbeh_tab": MessageLookupByLibrary.simpleMessage("Tasbeh"),
-        "theme": MessageLookupByLibrary.simpleMessage("Theme"),
-        "verses_number": MessageLookupByLibrary.simpleMessage("Verses Number")
-      };
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
 }

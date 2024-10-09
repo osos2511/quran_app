@@ -1,7 +1,27 @@
 import 'package:flutter/material.dart';
+
+<<<<
+<<
+<
+
+HEAD
 import 'package:islami_app/config/theme/my_theme.dart';
+==
+==
+==
+=
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+>>
+>
+>
+>
+>
+>
+58
+cad36
+(+ localization)
 import 'package:islami_app/core/utils/assets_manager.dart';
-import 'package:islami_app/core/utils/strings_manager.dart';
 import 'package:islami_app/presentation/home/tabs/hadith_tab/hadith_tab.dart';
 import 'package:islami_app/presentation/home/tabs/quran_tab/quran_tab.dart';
 import 'package:islami_app/presentation/home/tabs/radio_tab/radio_tab.dart';
@@ -39,8 +59,9 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text(StringsManager.appTitle),
+title: Text(AppLocalizations.of(context)!.app_title),
         ),
+<<<<<<< HEAD
         bottomNavigationBar: Theme(
           data: ThemeData(canvasColor: Theme.of(context).primaryColor),
           child: BottomNavigationBar(
@@ -76,6 +97,46 @@ class _HomeScreenState extends State<HomeScreen> {
                   icon: Icon(Icons.settings), label: StringsManager.radioLable),
             ],
           ),
+=======
+bottomNavigationBar: BottomNavigationBar(
+currentIndex: selectedIndex,
+onTap: (index) {
+setState(() {
+selectedIndex = index;
+});
+},
+iconSize: 28,
+items: [
+BottomNavigationBarItem(
+backgroundColor: Theme.of(context).primaryColor,
+icon: const ImageIcon(
+AssetImage(AssetsManager.quranIcon),
+),
+label: AppLocalizations.of(context)!.quran_tab),
+BottomNavigationBarItem(
+backgroundColor: Theme.of(context).primaryColor,
+icon: const ImageIcon(
+AssetImage(AssetsManager.hadithIcon),
+),
+label: AppLocalizations.of(context)!.hadith_tab),
+BottomNavigationBarItem(
+backgroundColor: Theme.of(context).primaryColor,
+icon: const ImageIcon(
+AssetImage(AssetsManager.sibhaIcon),
+),
+label: AppLocalizations.of(context)!.tasbeh_tab),
+BottomNavigationBarItem(
+backgroundColor: Theme.of(context).primaryColor,
+icon: const ImageIcon(
+AssetImage(AssetsManager.radioIcon),
+),
+label: AppLocalizations.of(context)!.radio_tab),
+BottomNavigationBarItem(
+backgroundColor: Theme.of(context).primaryColor,
+icon: const Icon(Icons.settings),
+label: AppLocalizations.of(context)!.setting_tab),
+],
+>>>>>>> 58cad36 (+ localization)
         ),
         body: tabs[selectedIndex],
       ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/core/utils/assets_manager.dart';
-import 'package:islami_app/core/utils/strings_manager.dart';
 import 'package:islami_app/presentation/home/tabs/quran_tab/quran_title_widget/quran_title_widget.dart';
 
 class QuranTab extends StatelessWidget {
@@ -257,7 +257,7 @@ class QuranTab extends StatelessWidget {
               children: [
                 Expanded(
                     child: Text(
-                  StringsManager.chapterName,
+                  AppLocalizations.of(context)!.chapter_name,
                   textAlign: TextAlign.center,
                   style: Theme.of(context)
                       .textTheme
@@ -270,7 +270,7 @@ class QuranTab extends StatelessWidget {
                     color: Theme.of(context).dividerColor),
                 Expanded(
                     child: Text(
-                  StringsManager.versesNum,
+                  AppLocalizations.of(context)!.verses_number,
                   textAlign: TextAlign.center,
                   style: Theme.of(context)
                       .textTheme

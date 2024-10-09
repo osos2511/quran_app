@@ -15,17 +15,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-        localizationsDelegates: [
-          AppLocalizations.delegate, // Add this line
+      localizationsDelegates: [
+        AppLocalizations.delegate, // Add this line
 
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
-        supportedLocales: [
-          Locale('en'), // English
-          Locale('ar'), // Arabic
-        ],
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        Locale('en'), // English
+        Locale('ar'), // Arabic
+      ],
         locale: Locale('en'),
       routes: {
         RoutesManager.homeRoute: (_) => HomeScreen(),
@@ -35,10 +35,6 @@ class MyApp extends StatelessWidget {
       },
       initialRoute: RoutesManager.splashRoute,
       theme: MyTheme.lightTheme,
-        <<<<<<< HEAD
-      darkTheme: MyTheme.darkTheme,
-        =======
-        >>>>>>> 58cad36 (+ localization)
       themeMode: ThemeMode.dark,
     );
   }

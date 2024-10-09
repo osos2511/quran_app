@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         Locale('en'), // English
         Locale('ar'), // Arabic
       ],
-      locale: Locale('ar'),
+      locale: Locale('en'),
       routes: {
         RoutesManager.homeRoute: (_) => HomeScreen(),
         RoutesManager.splashRoute: (_) => const SplashScreen(),

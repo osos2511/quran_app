@@ -32,8 +32,6 @@ class MyTheme {
       ),
     ),
     textTheme: const TextTheme(
-      bodyLarge: TextStyle(
-          fontWeight: FontWeight.w600, fontSize: 25, color: Colors.black),
       titleSmall: TextStyle(
         fontWeight: FontWeight.w400,
         fontSize: 25,
@@ -88,10 +86,6 @@ class MyTheme {
       ),
     ),
     textTheme: const TextTheme(
-      bodyLarge: TextStyle(
-          fontWeight: FontWeight.w600,
-          fontSize: 25,
-          color: ColorsManager.yellowColor),
       titleSmall: TextStyle(
         fontWeight: FontWeight.w400,
         fontSize: 25,

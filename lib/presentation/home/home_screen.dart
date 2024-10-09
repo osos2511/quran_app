@@ -7,6 +7,8 @@ import 'package:islami_app/presentation/home/tabs/radio_tab/radio_tab.dart';
 import 'package:islami_app/presentation/home/tabs/sebha_tab/sebha_tab.dart';
 import 'package:islami_app/presentation/home/tabs/settings_tab/settings_tab.dart';
 
+import '../../config/theme/my_theme.dart';
+
 class HomeScreen extends StatefulWidget {
   HomeScreen({super.key});
 
@@ -28,9 +30,11 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(AssetsManager.lightMainBg),
+          image: AssetImage(MyTheme.isDarkEnabled
+              ? AssetsManager.darkMainBg
+              : AssetsManager.lightMainBg),
           fit: BoxFit.fill,
         ),
       ),

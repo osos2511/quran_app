@@ -28,9 +28,7 @@ class ThemeBottomSheet extends StatelessWidget {
           Text(
             AppLocalizations.of(context)!.dark,
             style: Theme.of(context)
-                .textTheme
-                .bodyMedium
-                ?.copyWith(color: Colors.black),
+                .textTheme.displayMedium,
           ),
         ],
       ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/core/utils/assets_manager.dart';
-import 'package:islami_app/core/utils/strings_manager.dart';
 import 'package:islami_app/presentation/home/tabs/hadith_tab/hadith_tab.dart';
 import 'package:islami_app/presentation/home/tabs/quran_tab/quran_tab.dart';
 import 'package:islami_app/presentation/home/tabs/radio_tab/radio_tab.dart';
@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text(StringsManager.appTitle),
+          title: Text(AppLocalizations.of(context)!.app_title),
         ),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: selectedIndex,
@@ -52,29 +52,29 @@ class _HomeScreenState extends State<HomeScreen> {
                 icon: const ImageIcon(
                   AssetImage(AssetsManager.quranIcon),
                 ),
-                label: StringsManager.quranLabel),
+                label: AppLocalizations.of(context)!.quran_tab),
             BottomNavigationBarItem(
                 backgroundColor: Theme.of(context).primaryColor,
                 icon: const ImageIcon(
                   AssetImage(AssetsManager.hadithIcon),
                 ),
-                label: StringsManager.hadithLabel),
+                label: AppLocalizations.of(context)!.hadith_tab),
             BottomNavigationBarItem(
                 backgroundColor: Theme.of(context).primaryColor,
                 icon: const ImageIcon(
                   AssetImage(AssetsManager.sibhaIcon),
                 ),
-                label: StringsManager.sibhaLabel),
+                label: AppLocalizations.of(context)!.tasbeh_tab),
             BottomNavigationBarItem(
                 backgroundColor: Theme.of(context).primaryColor,
                 icon: const ImageIcon(
                   AssetImage(AssetsManager.radioIcon),
                 ),
-                label: StringsManager.radioLable),
+                label: AppLocalizations.of(context)!.radio_tab),
             BottomNavigationBarItem(
                 backgroundColor: Theme.of(context).primaryColor,
                 icon: const Icon(Icons.settings),
-                label: StringsManager.radioLable),
+                label: AppLocalizations.of(context)!.setting_tab),
           ],
         ),
         body: tabs[selectedIndex],

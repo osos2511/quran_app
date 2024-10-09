@@ -8,4 +8,6 @@ class AssetsManager {
   static const String radioIcon = 'assets/images/icon_radio.png';
   static const String quranHeaderImage = 'assets/images/quran_header_image.png';
   static const String hadithHeaderImage = 'assets/images/hadith_header.png';
+  static const String sebhaHeaderImage = 'assets/images/seb7a head.png';
+  static const String sebhaBodyImage = 'assets/images/seb7a_body.png';
 }

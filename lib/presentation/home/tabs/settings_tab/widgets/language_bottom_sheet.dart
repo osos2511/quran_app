@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LanguageBottomSheet extends StatelessWidget {
   LanguageBottomSheet({super.key});
@@ -15,7 +16,7 @@ class LanguageBottomSheet extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'English',
+                AppLocalizations.of(context)!.english,
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
               Icon(Icons.check,
@@ -26,7 +27,7 @@ class LanguageBottomSheet extends StatelessWidget {
             height: 18,
           ),
           Text(
-            'Arabic',
+            AppLocalizations.of(context)!.arabic,
             style: Theme.of(context)
                 .textTheme
                 .bodyMedium

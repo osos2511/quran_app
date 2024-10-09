@@ -9,15 +9,15 @@ class SettingsTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(8.0),
+      padding: EdgeInsets.all(8.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
-          AppLocalizations.of(context)!.theme,
+            AppLocalizations.of(context)!.theme,
             style: Theme.of(context).textTheme.labelSmall,
           ),
-    const SizedBox(
+          const SizedBox(
             height: 4,
           ),
           InkWell(
@@ -25,11 +25,7 @@ class SettingsTab extends StatelessWidget {
               showThemeBottomSheet(context);
             },
             child: Container(
-    <<<<<<< HEAD
-              padding: EdgeInsets.symmetric(vertical: 15, horizontal: 4),
-    =======
-    padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 4),
-    >>>>>>> 58cad36 (+ localization)
+              padding: EdgeInsets.symmetric(vertical: 8, horizontal: 4),
               decoration: BoxDecoration(
                 border:
                     Border.all(color: Theme.of(context).primaryColor, width: 2),
@@ -39,14 +35,14 @@ class SettingsTab extends StatelessWidget {
                   style: Theme.of(context).textTheme.displaySmall),
             ),
           ),
-    const SizedBox(
+          SizedBox(
             height: 12,
           ),
           Text(
             AppLocalizations.of(context)!.language,
             style: Theme.of(context).textTheme.labelSmall,
           ),
-    const SizedBox(
+          SizedBox(
             height: 4,
           ),
           InkWell(
@@ -54,11 +50,7 @@ class SettingsTab extends StatelessWidget {
               showLanguageBottomSheet(context);
             },
             child: Container(
-    <<<<<<< HEAD
-              padding: EdgeInsets.symmetric(vertical: 15, horizontal: 4),
-    =======
-    padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 4),
-    >>>>>>> 58cad36 (+ localization)
+              padding: EdgeInsets.symmetric(vertical: 8, horizontal: 4),
               decoration: BoxDecoration(
                 border:
                     Border.all(color: Theme.of(context).primaryColor, width: 2),

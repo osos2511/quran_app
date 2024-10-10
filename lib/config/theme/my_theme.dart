@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:islami_app/core/utils/colors_manager.dart';
 
 class MyTheme {
-  static bool isDarkEnabled = true;
+  //static bool isDarkEnabled = false;
   static final ThemeData lightTheme = ThemeData(
     iconTheme: IconThemeData(color: ColorsManager.goldColor, size: 30),
     colorScheme: ColorScheme.fromSeed(

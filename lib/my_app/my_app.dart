@@ -7,12 +7,18 @@ import 'package:islami_app/presentation/home/home_screen.dart';
 import 'package:islami_app/presentation/home/tabs/hadith_tab/hadith_details_screen/hadith_details.dart';
 import 'package:islami_app/presentation/home/tabs/quran_tab/quran_details/quran_details_screen.dart';
 import 'package:islami_app/presentation/splash/splash_screen.dart';
+import 'package:islami_app/provider/settings_provider.dart';
+import 'package:provider/provider.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
+    //step3
+    //this context is important with this data
+    var provider = Provider.of<SettingsProvider>(context);
+    //now!, i access to this settings provider
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       localizationsDelegates: [
@@ -25,7 +31,7 @@ class MyApp extends StatelessWidget {
         Locale('en'), // English
         Locale('ar'), // Arabic
       ],
-      locale: Locale('ar'),
+      locale: Locale(provider.currentLang),
       routes: {
         RoutesManager.homeRoute: (_) => HomeScreen(),
         RoutesManager.splashRoute: (_) => const SplashScreen(),
@@ -35,7 +41,8 @@ class MyApp extends StatelessWidget {
       initialRoute: RoutesManager.splashRoute,
       theme: MyTheme.lightTheme,
       darkTheme: MyTheme.darkTheme,
-      themeMode: ThemeMode.dark,
+      //step4
+      themeMode: provider.currentTheme,
     );
   }
 }

@@ -6,8 +6,9 @@ import 'package:islami_app/presentation/home/tabs/quran_tab/quran_tab.dart';
 import 'package:islami_app/presentation/home/tabs/radio_tab/radio_tab.dart';
 import 'package:islami_app/presentation/home/tabs/sebha_tab/sebha_tab.dart';
 import 'package:islami_app/presentation/home/tabs/settings_tab/settings_tab.dart';
+import 'package:provider/provider.dart';
 
-import '../../config/theme/my_theme.dart';
+import '../../provider/settings_provider.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({super.key});
@@ -29,12 +30,12 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<SettingsProvider>(context);
+
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(MyTheme.isDarkEnabled
-              ? AssetsManager.darkMainBg
-              : AssetsManager.lightMainBg),
+          image: AssetImage(provider.getBackGroundTheme()),
           fit: BoxFit.fill,
         ),
       ),

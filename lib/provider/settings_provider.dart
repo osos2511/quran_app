@@ -31,4 +31,16 @@ class SettingsProvider extends ChangeNotifier {
   bool isSelectedArabic() {
     return currentLang == 'ar';
   }
+
+  String getSebhaHeadTheme() {
+    return currentTheme == ThemeMode.light
+        ? AssetsManager.sebhaHeaderLightTheme
+        : AssetsManager.sebhaHeaderDarkTheme;
+  }
+
+  String getSebhaBodyTheme() {
+    return currentTheme == ThemeMode.light
+        ? AssetsManager.sebhaBodyLightTheme
+        : AssetsManager.sebhaBodyDarkTheme;
+  }
 }

@@ -7,6 +7,7 @@ void main() {
   //step 2
   runApp(
     //settings provider class is single tool instance
+
     ChangeNotifierProvider(
         create: (context) => SettingsProvider(), child: MyApp()),
   );

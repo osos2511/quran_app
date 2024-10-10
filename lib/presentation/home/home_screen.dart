@@ -8,6 +8,7 @@ import 'package:islami_app/presentation/home/tabs/sebha_tab/sebha_tab.dart';
 import 'package:islami_app/presentation/home/tabs/settings_tab/settings_tab.dart';
 import 'package:provider/provider.dart';
 
+import '../../provider/sebha_provider.dart';
 import '../../provider/settings_provider.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -21,7 +22,8 @@ class _HomeScreenState extends State<HomeScreen> {
   List<Widget> tabs = [
     QuranTab(),
     HadithTab(),
-    SebhaTab(),
+    ChangeNotifierProvider(
+        create: (context) => SebhaProvider(), child: SebhaTab()),
     RadioTab(),
     SettingsTab(),
   ];

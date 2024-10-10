@@ -37,6 +37,11 @@ class MyTheme {
       ),
     ),
     textTheme: const TextTheme(
+      bodySmall: TextStyle(
+        color: Colors.white,
+        fontWeight: FontWeight.w600,
+        fontSize: 25,
+      ),
       bodyLarge: TextStyle(
         color: Colors.black,
         fontWeight: FontWeight.w600,
@@ -104,6 +109,11 @@ class MyTheme {
       ),
     ),
     textTheme: const TextTheme(
+      bodySmall: TextStyle(
+        color: Colors.black,
+        fontWeight: FontWeight.w600,
+        fontSize: 25,
+      ),
       bodyLarge: TextStyle(
         color: ColorsManager.yellowColor,
         fontWeight: FontWeight.w600,

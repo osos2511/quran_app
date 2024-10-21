@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/provider/sebha_provider.dart';
-import 'package:islami_app/provider/settings_provider.dart';
+import 'package:islami_app/provider/theme_provider.dart';
 import 'package:provider/provider.dart';
 
 class SebhaTab extends StatefulWidget {
@@ -13,7 +13,7 @@ class SebhaTab extends StatefulWidget {
 class _SebhaTabState extends State<SebhaTab> {
   @override
   Widget build(BuildContext context) {
-    var settingsProvider = Provider.of<SettingsProvider>(context);
+    var settingsProvider = Provider.of<ThemeProvider>(context);
     var sebhaProvider = Provider.of<SebhaProvider>(context);
     return Center(
       child: Column(

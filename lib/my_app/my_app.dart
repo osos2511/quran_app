@@ -7,7 +7,8 @@ import 'package:islami_app/presentation/home/home_screen.dart';
 import 'package:islami_app/presentation/home/tabs/hadith_tab/hadith_details_screen/hadith_details.dart';
 import 'package:islami_app/presentation/home/tabs/quran_tab/quran_details/quran_details_screen.dart';
 import 'package:islami_app/presentation/splash/splash_screen.dart';
-import 'package:islami_app/provider/settings_provider.dart';
+import 'package:islami_app/provider/language_provider.dart';
+import 'package:islami_app/provider/theme_provider.dart';
 import 'package:provider/provider.dart';
 
 class MyApp extends StatelessWidget {
@@ -17,24 +18,25 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     //step3
     //this context is important with this data
-    var provider = Provider.of<SettingsProvider>(context);
-    //now!, i access to this settings provider
+    var provider = Provider.of<ThemeProvider>(context);
+    var langProvider = Provider.of<LanguageProvider>(context);
+    //now!, i access to this providers
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      localizationsDelegates: [
+      localizationsDelegates: const [
         AppLocalizations.delegate, // Add this line
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      supportedLocales: [
+      supportedLocales: const [
         Locale('en'), // English
         Locale('ar'), // Arabic
       ],
-      locale: Locale(provider.currentLang),
+      locale: Locale(langProvider.currentLang),
       routes: {
         RoutesManager.homeRoute: (_) => HomeScreen(),
-        RoutesManager.splashRoute: (_) => const SplashScreen(),
+        RoutesManager.splashRoute: (_) => SplashScreen(),
         RoutesManager.quranDetailsRoute: (_) => const QuranDetailsScreen(),
         RoutesManager.hadithDetailsRoute: (_) => const HadithDetailsScreen(),
       },

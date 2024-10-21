@@ -9,7 +9,7 @@ import 'package:islami_app/presentation/home/tabs/settings_tab/settings_tab.dart
 import 'package:provider/provider.dart';
 
 import '../../provider/sebha_provider.dart';
-import '../../provider/settings_provider.dart';
+import '../../provider/theme_provider.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({super.key});
@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var provider = Provider.of<SettingsProvider>(context);
+    var provider = Provider.of<ThemeProvider>(context);
 
     return Container(
       decoration: BoxDecoration(

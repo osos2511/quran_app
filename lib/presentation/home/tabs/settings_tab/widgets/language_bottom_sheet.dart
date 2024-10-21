@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami_app/provider/language_provider.dart';
 import 'package:provider/provider.dart';
-
-import '../../../../../provider/settings_provider.dart';
 
 class LanguageBottomSheet extends StatefulWidget {
   LanguageBottomSheet({super.key});
@@ -14,32 +13,32 @@ class LanguageBottomSheet extends StatefulWidget {
 class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
   @override
   Widget build(BuildContext context) {
-    var provider = Provider.of<SettingsProvider>(context);
+    var langProvider = Provider.of<LanguageProvider>(context);
     return Container(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           InkWell(
               onTap: () {
-                provider.changeAppLang('en');
+                langProvider.changeAppLang('en');
               },
-              child: provider.isSelectedEnglish()
+              child: langProvider.isSelectedEnglish()
                   ? buildSelectedLanguage(
                       AppLocalizations.of(context)!.english,
                     )
                   : buildUnSelectedLanguage(
                       AppLocalizations.of(context)!.english,
                     )),
-          SizedBox(
+          const SizedBox(
             height: 18,
           ),
           InkWell(
             onTap: () {
-              provider.changeAppLang('ar');
+              langProvider.changeAppLang('ar');
             },
-            child: provider.isSelectedArabic()
+            child: langProvider.isSelectedArabic()
                 ? buildSelectedLanguage(
                     AppLocalizations.of(context)!.arabic,
                   )
@@ -60,7 +59,7 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
           text,
           style: Theme.of(context).textTheme.bodyMedium,
         ),
-        Icon(Icons.check),
+        const Icon(Icons.check),
       ],
     );
   }

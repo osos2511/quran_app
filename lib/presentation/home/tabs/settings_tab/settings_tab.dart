@@ -2,18 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/presentation/home/tabs/settings_tab/widgets/language_bottom_sheet.dart';
 import 'package:islami_app/presentation/home/tabs/settings_tab/widgets/theme_bottom_sheet.dart';
+import 'package:islami_app/provider/language_provider.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../provider/settings_provider.dart';
+import '../../../../provider/theme_provider.dart';
 
 class SettingsTab extends StatelessWidget {
   const SettingsTab({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var provider = Provider.of<SettingsProvider>(context);
+    var themeProvider = Provider.of<ThemeProvider>(context);
+    var langProvider = Provider.of<LanguageProvider>(context);
     return Container(
-      padding: EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -29,27 +31,27 @@ class SettingsTab extends StatelessWidget {
               showThemeBottomSheet(context);
             },
             child: Container(
-              padding: EdgeInsets.symmetric(vertical: 8, horizontal: 4),
+              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 4),
               decoration: BoxDecoration(
                 border: Border.all(
                     color: Theme.of(context).colorScheme.onSecondary, width: 2),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Text(
-                  provider.currentTheme == ThemeMode.light
+                  themeProvider.currentTheme == ThemeMode.light
                       ? AppLocalizations.of(context)!.light
                       : AppLocalizations.of(context)!.dark,
                   style: Theme.of(context).textTheme.displaySmall),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 12,
           ),
           Text(
             AppLocalizations.of(context)!.language,
             style: Theme.of(context).textTheme.labelSmall,
           ),
-          SizedBox(
+          const SizedBox(
             height: 4,
           ),
           InkWell(
@@ -57,14 +59,14 @@ class SettingsTab extends StatelessWidget {
               showLanguageBottomSheet(context);
             },
             child: Container(
-              padding: EdgeInsets.symmetric(vertical: 8, horizontal: 4),
+              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 4),
               decoration: BoxDecoration(
                 border: Border.all(
                     color: Theme.of(context).colorScheme.onSecondary, width: 2),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Text(
-                  provider.isSelectedEnglish()
+                  langProvider.isSelectedEnglish()
                       ? AppLocalizations.of(context)!.english
                       : AppLocalizations.of(context)!.arabic,
                   style: Theme.of(context).textTheme.displaySmall),

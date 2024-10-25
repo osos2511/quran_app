@@ -13,20 +13,24 @@ class ThemeProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  bool isSelectedLight() {
+    return currentTheme == ThemeMode.light;
+  }
+
   String getBackGroundTheme() {
-    return currentTheme == ThemeMode.light
+    return isSelectedLight()
         ? AssetsManager.lightMainBg
         : AssetsManager.darkMainBg;
   }
 
   String getSebhaHeadTheme() {
-    return currentTheme == ThemeMode.light
+    return isSelectedLight()
         ? AssetsManager.sebhaHeaderLightTheme
         : AssetsManager.sebhaHeaderDarkTheme;
   }
 
   String getSebhaBodyTheme() {
-    return currentTheme == ThemeMode.light
+    return isSelectedLight()
         ? AssetsManager.sebhaBodyLightTheme
         : AssetsManager.sebhaBodyDarkTheme;
   }

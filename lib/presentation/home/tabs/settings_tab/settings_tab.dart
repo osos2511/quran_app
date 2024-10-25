@@ -12,8 +12,8 @@ class SettingsTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var themeProvider = Provider.of<ThemeProvider>(context);
-    var langProvider = Provider.of<LanguageProvider>(context);
+    //var themeProvider = Provider.of<ThemeProvider>(context);
+    //var langProvider = Provider.of<LanguageProvider>(context);
     return Container(
       padding: const EdgeInsets.all(8.0),
       child: Column(
@@ -38,7 +38,7 @@ class SettingsTab extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Text(
-                  themeProvider.currentTheme == ThemeMode.light
+                  context.watch<ThemeProvider>().isSelectedLight()
                       ? AppLocalizations.of(context)!.light
                       : AppLocalizations.of(context)!.dark,
                   style: Theme.of(context).textTheme.displaySmall),
@@ -66,7 +66,7 @@ class SettingsTab extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Text(
-                  langProvider.isSelectedEnglish()
+                  context.watch<LanguageProvider>().isSelectedEnglish()
                       ? AppLocalizations.of(context)!.english
                       : AppLocalizations.of(context)!.arabic,
                   style: Theme.of(context).textTheme.displaySmall),

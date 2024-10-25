@@ -14,7 +14,7 @@ class ThemeBottomSheet extends StatefulWidget {
 class _ThemeBottomSheetState extends State<ThemeBottomSheet> {
   @override
   Widget build(BuildContext context) {
-    var themeProvider = Provider.of<ThemeProvider>(context);
+    //var themeProvider = Provider.of<ThemeProvider>(context);
     return Container(
       padding: const EdgeInsets.all(12),
       child: Column(
@@ -23,9 +23,9 @@ class _ThemeBottomSheetState extends State<ThemeBottomSheet> {
         children: [
           InkWell(
               onTap: () {
-                themeProvider.changeAppTheme(ThemeMode.light);
+                context.read<ThemeProvider>().changeAppTheme(ThemeMode.light);
               },
-              child: themeProvider.currentTheme == ThemeMode.light
+              child: context.watch<ThemeProvider>().isSelectedLight()
                   ? buildSelectedThemeItem(AppLocalizations.of(context)!.light)
                   : buildUnSelectedThemeItem(
                       AppLocalizations.of(context)!.light)),
@@ -34,9 +34,9 @@ class _ThemeBottomSheetState extends State<ThemeBottomSheet> {
           ),
           InkWell(
               onTap: () {
-                themeProvider.changeAppTheme(ThemeMode.dark);
+                context.read<ThemeProvider>().changeAppTheme(ThemeMode.dark);
               },
-              child: themeProvider.currentTheme == ThemeMode.dark
+              child: !(context.watch<ThemeProvider>().isSelectedLight())
                   ? buildSelectedThemeItem(AppLocalizations.of(context)!.dark)
                   : buildUnSelectedThemeItem(
                       AppLocalizations.of(context)!.dark)),

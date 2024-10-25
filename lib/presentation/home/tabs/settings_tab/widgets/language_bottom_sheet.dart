@@ -4,7 +4,7 @@ import 'package:islami_app/provider/language_provider.dart';
 import 'package:provider/provider.dart';
 
 class LanguageBottomSheet extends StatefulWidget {
-  LanguageBottomSheet({super.key});
+  const LanguageBottomSheet({super.key});
 
   @override
   State<LanguageBottomSheet> createState() => _LanguageBottomSheetState();
@@ -13,7 +13,7 @@ class LanguageBottomSheet extends StatefulWidget {
 class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
   @override
   Widget build(BuildContext context) {
-    var langProvider = Provider.of<LanguageProvider>(context);
+    //var langProvider = Provider.of<LanguageProvider>(context);
     return Container(
       padding: const EdgeInsets.all(12),
       child: Column(
@@ -22,9 +22,9 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
         children: [
           InkWell(
               onTap: () {
-                langProvider.changeAppLang('en');
+                context.read<LanguageProvider>().changeAppLang('en');
               },
-              child: langProvider.isSelectedEnglish()
+              child: context.watch<LanguageProvider>().isSelectedEnglish()
                   ? buildSelectedLanguage(
                       AppLocalizations.of(context)!.english,
                     )
@@ -36,9 +36,9 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
           ),
           InkWell(
             onTap: () {
-              langProvider.changeAppLang('ar');
+              context.read<LanguageProvider>().changeAppLang('ar');
             },
-            child: langProvider.isSelectedArabic()
+            child: context.watch<LanguageProvider>().isSelectedArabic()
                 ? buildSelectedLanguage(
                     AppLocalizations.of(context)!.arabic,
                   )
@@ -65,9 +65,13 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
   }
 
   Widget buildUnSelectedLanguage(String text) {
-    return Text(
-      text,
-      style: Theme.of(context).textTheme.displayMedium,
+    return Row(
+      children: [
+        Text(
+          text,
+          style: Theme.of(context).textTheme.displayMedium,
+        ),
+      ],
     );
   }
 }
